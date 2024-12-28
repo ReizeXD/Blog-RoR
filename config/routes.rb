@@ -8,9 +8,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root to: "static_pages#index"
-
+  get 'entrar', to: 'sessions#new'
+  post 'entrar', to: 'sessions#create'
+  delete 'sair', to: 'sessions#destroy'
 
   resources :users, only: [:new, :create]
+  resources :sessions, only: [:new, :create]
 
 
 
