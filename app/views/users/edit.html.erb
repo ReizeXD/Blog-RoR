@@ -1,0 +1,16 @@
+<div class="row mt-4">
+    <div class="col-12 text-center mb-3">
+      <h1>Editar Dados</h1>
+    </div>
+  
+    <div class="col-md-6 offset-md-3 col-xs-12">
+      <%= form_for current_user do |f| %>
+       <%= render 'fields', f: f %>   
+
+       <div class="mb-3 d-flex justify-content-between">
+        <%= f.submit 'Editar', class: 'btn btn-primary' %>
+        <%= link_to 'Voltar',root_url, class: 'btn btn-secondary' %>
+       </div>
+      <% end %>
+    </div>
+</div>

@@ -1,17 +1,16 @@
 <div class="row">
-    <div class="col-xs-12">
-      <h1>Cadastre-se</h1>
-    </div>
-  
-    <div class="col-md-6 col-md-offset-3 col-xs-12">
-      <%= form_for @user, data: {turbo:false} do |f| %>
-        <%= render 'fields', f: f %>   
-  
-        <div class="form-group">
-          <%= f.submit 'Cadastrar', class: 'btn btn-primary' %>
-          <%= link_to 'Voltar',root_url, class: 'btn btn-primary' %>
-        </div>
-      <% end %>
-    </div>
+  <div class="col-12">
+    <h1 class="text-center">Cadastre-se</h1>
   </div>
-  
+
+  <div class="col-md-6 offset-md-3 col-12">
+    <%= form_for @user, data: { turbo: false }, class: "needs-validation" do |f| %>
+      <%= render 'fields', f: f %>
+
+      <div class="mb-3 d-flex justify-content-between">
+        <%= f.submit 'Cadastrar', class: 'btn btn-primary' %>
+        <%= link_to 'Voltar', root_url, class: 'btn btn-secondary' %>
+      </div>
+    <% end %>
+  </div>
+</div>

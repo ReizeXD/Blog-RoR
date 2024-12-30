@@ -27,7 +27,7 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><%= link_to 'Minha Página', root_url, class: 'dropdown-item' %></li>
-                <li><%= link_to 'Editar', root_url, class: 'dropdown-item' %></li>
+                <li><%= link_to 'Editar', edit_user_path(current_user), class: 'dropdown-item' %></li>
                 <li><hr class="dropdown-divider"></li>
                 <li>
                   <%= form_with url: sair_path, method: :delete, class: 'inline' do %>
