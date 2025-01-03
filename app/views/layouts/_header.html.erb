@@ -8,15 +8,13 @@
       <!-- Conteúdo exibido em telas maiores e escondido em telas menores -->
       <div class="collapse navbar-collapse" id="expanded-menu">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <% if !user_signed_in? %>
-            <li class="nav-item active">
-              <%= link_to 'Nova Conta', new_user_path, class: 'nav-link' %>
-            </li>
-          <% end %>
         </ul>
         
         <ul class="navbar-nav ms-auto">
           <% if !user_signed_in? %>
+            <li class="nav-item active">
+              <%= link_to 'Nova Conta', new_user_path, class: 'nav-link' %>
+            </li>
             <li class="nav-item">
               <%= link_to 'Entrar', entrar_path, class: 'nav-link' %>
             </li>
@@ -26,16 +24,15 @@
                 Bem-vindo, <%= current_user.name %>
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><%= link_to 'Minha Página', root_url, class: 'dropdown-item' %></li>
-                <li><%= link_to 'Editar', edit_user_path(current_user), class: 'dropdown-item' %></li>
+                <li><%= link_to 'Ver Posts', root_url, class: 'dropdown-item' %></li>
+                <li><%= link_to 'Editar Dados', edit_user_path(current_user), class: 'dropdown-item' %></li>
+                <li><%= link_to 'Editar Senha', edit_password_user_path(current_user), class: 'dropdown-item' %></li>
                 <li><hr class="dropdown-divider"></li>
                 <li>
                   <%= form_with url: sair_path, method: :delete, class: 'inline' do %>
                     <%= submit_tag 'Sair', class: 'dropdown-item' %>
                   <% end %>
                 </li>
-                <!-- Método com o link to não está funcionando -->
-                <!-- <li><%= link_to 'Sair', sair_path, method: :delete, class: 'dropdown-item' %></li> -->
               </ul>
             </li>
           <% end %>

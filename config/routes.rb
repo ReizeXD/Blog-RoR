@@ -8,11 +8,24 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root to: "static_pages#index"
+
   get 'entrar', to: 'sessions#new'
   post 'entrar', to: 'sessions#create'
   delete 'sair', to: 'sessions#destroy'
 
-  resources :users, only: [:new, :create, :edit, :update]
+  get 'password/reset', to: 'password_resets#new'
+  post 'password/reset', to: 'password_resets#create'
+
+  get 'password/reset/edit', to: 'password_resets#edit'
+  patch 'password/reset/edit', to: 'password_resets#update'
+
+  resources :users, only: [:new, :create, :edit, :update] do
+    member do
+      get :edit_password
+      patch :update_password
+    end
+  end
+
   resources :sessions, only: [:new, :create]
 
 

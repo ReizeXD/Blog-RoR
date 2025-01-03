@@ -4,21 +4,23 @@
   </div>
 
   <div class="col-md-6 offset-md-3 col-xs-12">
-    <%= form_for :session, url: entrar_path, method: :post do |f| %>
-      <% if flash[:danger] %>
-        <div class="alert alert-danger">
-          <%= flash[:danger] %>
-        </div>
-      <% end %>
+    <% flash.each do |key, message| %>
+      <div class="alert alert-<%= key %> alert-dismissible fade show" role="alert">
+        <%= message %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    <% end %>
 
+    <%= form_for :session, url: entrar_path, method: :post do |f| %>
       <div class="form-group mb-3">
-        <%= f.label :email %>
+        <%= f.label :email, 'Email' %>
         <%= f.email_field :email, placeholder: 'Email', class: 'form-control' %>
       </div>
 
       <div class="form-group mb-3">
-        <%= f.label :password %>
+        <%= f.label :password, 'Senha' %>
         <%= f.password_field :password, placeholder: 'Senha', class: 'form-control' %>
+        <%= link_to "Esqueceu sua senha?", password_reset_path %>
       </div>
 
       <div class="d-flex justify-content-between">

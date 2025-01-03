@@ -1,0 +1,11 @@
+<h1 class="display-4">Esqueceu a sua senha ?</h1>
+
+<%= form_with url: password_reset_path do |f| %>
+    <div class="mb-3">
+        <%= f.label :email, class: 'form-label' %>
+        <%= f.email_field :email, class: 'form-control' , placeholder: "jose@gmail.com" %>
+    </div>
+    <div class="mb-3 d-flex justify-content-between">
+        <%= f.submit 'Reset', class: 'btn btn-primary' %>
+    </div>
+<% end %>

@@ -1,0 +1,7 @@
+Olá <%= @user.email %>.
+
+Alguém requisitou a redefinição de sua senha no site Blogify.
+
+Se foi você, clique neste link para resetar a senha. O link irá se expirar automaticamente em 15 minutos.
+
+<%= link_to "Resete a Senha", password_reset_edit_url(token: @token) %>
