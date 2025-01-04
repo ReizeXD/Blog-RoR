@@ -8,6 +8,15 @@
       <!-- Conteúdo exibido em telas maiores e escondido em telas menores -->
       <div class="collapse navbar-collapse" id="expanded-menu">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <% if !user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to 'Faça um post', entrar_path, class: 'nav-link' %>
+          </li>
+          <% else %>
+          <li class="nav-item active">
+            <%= link_to 'Faça um post', new_post_path, class: 'nav-link' %>
+          </li>
+          <% end %>
         </ul>
         
         <ul class="navbar-nav ms-auto">
@@ -24,7 +33,7 @@
                 Bem-vindo, <%= current_user.name %>
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><%= link_to 'Ver Posts', root_url, class: 'dropdown-item' %></li>
+                <li><%= link_to 'Ver Posts', posts_path, class: 'dropdown-item' %></li>
                 <li><%= link_to 'Editar Dados', edit_user_path(current_user), class: 'dropdown-item' %></li>
                 <li><%= link_to 'Editar Senha', edit_password_user_path(current_user), class: 'dropdown-item' %></li>
                 <li><hr class="dropdown-divider"></li>

@@ -1,0 +1,15 @@
+<h1>Criar Novo Post</h1>
+<%= render 'layouts/error_messages', object: @post %>
+<%= form_with(model: @post, local: true) do |f| %>
+  <div class="mb-3">
+    <%= f.label :title, "Título" %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :content, "Conteúdo" %>
+    <%= f.text_area :content, class: "form-control" %>
+  </div>
+
+  <%= f.submit "Criar Post", class: "btn btn-primary" %>
+<% end %>

@@ -1,0 +1,42 @@
+$colors: (
+  "blue":       $blue,
+  "indigo":     $indigo,
+  "purple":     $purple,
+  "pink":       $pink,
+  "red":        $red,
+  "orange":     $orange,
+  "yellow":     $yellow,
+  "green":      $green,
+  "teal":       $teal,
+  "cyan":       $cyan,
+  "white":      $white,
+  "gray":       $gray-600,
+  "gray-dark":  $gray-800
+);
+
+#titulo{
+  background-color: black;
+}
+
+.teste{
+  color: #f39c12;
+}
+
+.custom-comment-btn {
+    border-color: #f39c12; /* Cor da borda do botão */
+    color: #f39c12; /* Cor do texto do botão */
+  }
+  
+  .custom-comment-btn:hover {
+    background-color: #f39c12; /* Cor de fundo ao passar o mouse */
+    color: white; /* Cor do texto ao passar o mouse */
+  }
+  
+  .custom-icon {
+    color: #f39c12; /* Cor do ícone */
+  }
+
+  .custom-title-bg {
+    background-color: #f39c12; /* cor laranja */
+  }
+  

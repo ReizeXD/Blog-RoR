@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   end
 
   resources :sessions, only: [:new, :create]
-
+  resources :posts
 
 
 end

@@ -7,11 +7,10 @@ gem "rails", "~> 7.1.5"
 
 # Coloquei para o boostrap
 gem "bootstrap"
-gem 'bootstrap-sass'
 gem "sassc-rails"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
-gem "sprockets-rails"
+#gem "sprockets-rails"
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
@@ -72,3 +71,5 @@ group :test do
 end
 
 gem 'dotenv-rails', groups: [:development, :test, :production]
+
+gem 'kaminari'

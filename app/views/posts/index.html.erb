@@ -1,0 +1,31 @@
+<div class="container mt-5">
+    <div class="row justify-content-center">
+      <% @posts.each do |post| %>
+        <div class="col-md-8 mb-4">
+          <!-- Div principal do post -->
+          <div class="card border-primary shadow">
+            <div class="card-header bg-dark text-white text-center" id="titulo">
+              <h3 class="mb-0"><%= post.title %></h3>
+            </div>
+            <div class="card-body">
+              <p class="card-text"><%= post.content %></p>
+            </div>
+            <div class="card-footer text-muted d-flex justify-content-between align-items-center">
+              <small>Publicado por: <%= post.user.name %> em <%= post.created_at.strftime('%d/%m/%Y') %></small>
+              <!-- Ícone de comentário -->
+              <%= link_to post_path(post), class: "btn btn-outline-primary btn-sm" do %>
+                <i class="bi bi-chat"></i> Comentários
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    
+    <!-- Paginação -->
+    <div class="d-flex justify-content-center mt-4 ">
+      <%= paginate @posts %>
+    </div>
+    
+  </div>
+  
