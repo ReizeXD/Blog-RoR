@@ -11,5 +11,8 @@
     <%= f.text_area :content, class: "form-control" %>
   </div>
 
-  <%= f.submit "Criar Post", class: "btn btn-primary" %>
+  <div class="mb-3 d-flex justify-content-between"></div>
+    <%= f.submit "Criar Post", class: "btn btn-primary" %>
+    <%= link_to 'Voltar', posts_path, class: 'btn btn-secondary' %>
+  </div>
 <% end %>

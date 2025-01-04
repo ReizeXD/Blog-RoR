@@ -7,6 +7,23 @@
           <div class="card border-primary shadow">
             <div class="card-header bg-dark text-white text-center" id="titulo">
               <h3 class="mb-0"><%= post.title %></h3>
+              <% if user_signed_in? && post_user(post) %>
+              <div class="d-flex justify-content-end">
+                  <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-list" style="font-size: 20px;"></i>
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><%= link_to 'Editar Post', edit_post_path(post), class: 'dropdown-item' %></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                      <%= form_with url: post_path(post), method: :delete, data: {turbo: false, confirm: 'Tem certeza que deseja deletar este post?' }, class: 'inline', local: true do %>
+                      <%= submit_tag 'Deletar Post', class: 'dropdown-item' %>
+                    <% end %>
+                    </li>
+                  </ul>
+              </div>
+              
+              <% end %>
             </div>
             <div class="card-body">
               <p class="card-text"><%= post.content %></p>
