@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 
         def require_author_post
             unless post_user(@post)
-                flash[:danger]="Esse post não é seu"
+                flash[:danger]="Esse post não é seu!"
                 redirect_to posts_path and return
             end
         end

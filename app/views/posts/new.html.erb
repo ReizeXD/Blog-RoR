@@ -3,12 +3,12 @@
 <%= form_with(model: @post, local: true) do |f| %>
   <div class="mb-3">
     <%= f.label :title, "Título" %>
-    <%= f.text_field :title, class: "form-control" %>
+    <%= f.text_field :title, required: true, class: "form-control" %>
   </div>
 
   <div class="mb-3">
     <%= f.label :content, "Conteúdo" %>
-    <%= f.text_area :content, class: "form-control" %>
+    <%= f.text_area :content, rows: 3, class: "form-control", required: true, style: "resize: none;" %>
   </div>
 
   <div class="mb-3 d-flex justify-content-between"></div>

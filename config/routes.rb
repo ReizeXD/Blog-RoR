@@ -27,7 +27,9 @@ Rails.application.routes.draw do
   end
 
   resources :sessions, only: [:new, :create]
-  resources :posts
+  resources :posts do
+    resources :comments, only: [:create]
+  end
 
 
 end

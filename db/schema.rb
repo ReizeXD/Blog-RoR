@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_12_27_234232) do
+ActiveRecord::Schema[7.1].define(version: 2025_01_05_172421) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.bigint "post_id", null: false
     t.boolean "anon", default: true
     t.datetime "created_at", null: false

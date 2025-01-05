@@ -26,14 +26,15 @@
               <% end %>
             </div>
             <div class="card-body">
-              <p class="card-text"><%= post.content %></p>
+              <p class="card-text"><%= simple_format(post.content)%></p>
             </div>
             <div class="card-footer text-muted d-flex justify-content-between align-items-center">
               <small>Publicado por: <%= post.user.name %> em <%= post.created_at.strftime('%d/%m/%Y') %></small>
               <!-- Ícone de comentário -->
               <%= link_to post_path(post), class: "btn btn-outline-primary btn-sm" do %>
-                <i class="bi bi-chat"></i> Comentários
-              <% end %>
+              <i class="bi bi-chat"></i> Comentários
+             <% end %>
+              
             </div>
           </div>
         </div>

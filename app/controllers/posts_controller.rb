@@ -9,10 +9,8 @@
         end
 
         def show
-            @post=Post.find_by(params[:id])
-            respond_to do |format|
-                format.html { render partial: 'post', locals: { post: @post } }
-            end
+            @post=Post.find(params[:id])
+            @comments=@post.comments.order(created_at: :desc)
         end
 
         def new
