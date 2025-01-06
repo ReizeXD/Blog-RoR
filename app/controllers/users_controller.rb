@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     def create 
         @user= User.new(user_params)
         if @user.save
-            flash[:success]="Usuario cadastrado com sucesso"
+            flash[:success]=t('flash.users.profile.create.success')
             redirect_to entrar_path
         else
             render :new
@@ -23,11 +23,11 @@ class UsersController < ApplicationController
         parametros=user_params.slice(:password, :password_confirmation)
         @user=current_user
         if !@user.authenticate(parametros[:password])
-            flash[:danger]="Essa não é sua senha"
+            flash[:danger]=t('flash.users.profile.update.error')
             redirect_to edit_user_path(current_user)
         else
             if @user.update(user_params)
-                flash[:success]="Usuario editado com sucesso"
+                flash[:success]=t('flash.users.profile.update.success')
                 redirect_to root_url
             else
                 render 'edit'
@@ -42,11 +42,11 @@ class UsersController < ApplicationController
         parametros=password_params.slice(:password, :password_confirmation)
         @user=current_user
         if !@user.authenticate(password_params[:current_password])
-            flash[:danger]="Essa não é sua senha"
+            flash[:danger]=t('flash.users.password.update.error')
             redirect_to edit_password_user_path(current_user)
         else
             if current_user.update(parametros)
-                flash[:success]="Senha editada com sucesso"
+                flash[:success]=('flash.users.password.update.success')
                 redirect_to root_url
             else
                 render 'edit_password'

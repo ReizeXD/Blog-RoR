@@ -1,0 +1,48 @@
+pt:
+  flash:
+    view:
+        limit:
+          error: "Área restrita, faça o login!"
+        author:
+          error: "Esse post não é seu!"
+    users:
+      profile:
+        update:
+          success: "Usuário editado com sucesso"
+          error: "Erro ao atualizar o usuário"
+        create:
+          success: "Usuário criado com sucesso"
+          error: "Erro ao criar o usuário"
+      password:
+        update:
+          success: "Senha editada com sucesso"
+          error: "Essa não é sua senha"
+    session:
+      create:
+        success: 'Login com sucesso'
+        error: "Email ou senha invalidos"
+      destroy:
+        success: "Lougout com sucesso"
+    posts:
+      create:
+        success: "Post publicado com sucesso!"
+        error: "Erro ao publicar post"
+      update: 
+        success: "Post editado com sucesso!"
+        error: "Erro ao editar post"
+      destroy: 
+        success: "Post deletado com sucesso!"
+        error: "Erro ao deletar post"
+    comments:
+      create:
+        success: "Comentário publicado com sucesso!"
+        error: "Erro ao publicar o comentário"
+    passwordreset:
+      create:
+        success: Uma mensagem de recuperação de senha foi enviada para o seu Email"
+        error: "Insira um Email!"
+      update:
+        success: "Sua senha foi atualizada com sucesso"
+        error: "Senhas diferentes, tente novamente!"
+      token: "Token expirado, tente novamente!"
+

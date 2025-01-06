@@ -20,10 +20,10 @@
         def create
             @post=Post.new(post_params.merge(user_id: current_user.id))
             if @post.save
-                flash[:success]="Post publicado com sucesso!"
+                flash[:success]=t('flash.posts.create.success')
                 redirect_to posts_path
             else
-                flash[:danger]="Erro ao publicar post"
+                flash[:danger]=t('flash.posts.create.error')
                 render :new
             end
         end
@@ -33,19 +33,19 @@
         
         def update
             if @post.update(post_params)
-                flash[:success]="Post editado com sucesso!"
+                flash[:success]=t('flash.posts.update.error')
                 redirect_to posts_path
             else
-                flash[:danger]="Erro ao publicar post"
+                flash[:danger]=t('flash.posts.update.error')
                 render :edit
             end
         end
         
         def destroy
             if @post.destroy
-                flash[:success] = "Post deletado com sucesso!"
+                flash[:success] = t('flash.posts.destroy.success')
             else
-                flash[:danger] = "Erro ao deletar post"
+                flash[:danger] = t('flash.posts.destroy.error')
             end
             redirect_to posts_path
         end

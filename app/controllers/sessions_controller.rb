@@ -9,17 +9,17 @@ class SessionsController < ApplicationController
         @user=user
         if user && user.authenticate(params[:session][:password])
             sign_in(user)
-            flash[:success]='Login com sucesso'
+            flash[:success]=t('flash.session.create.success')
             redirect_to root_path
         else
-            flash[:danger]="Email ou senha invalidos"
+            flash[:danger]=t('flash.session.create.error')
             render :new
         end
     end
 
     def destroy
         sign_out
-        flash[:success]="Lougout com sucesso"
+        flash[:success]=t('flash.session.destroy.success')
         redirect_to root_url
     end
 end

@@ -1,31 +1,47 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
-#
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
-#
-#     en:
-#       "yes": yup
-#       enabled: "ON"
-
 en:
-  hello: "Hello world"
+  flash:
+    view:
+      limit:
+        error: "Restricted area, please log in!"
+      author:
+        error: "This post doesn't belong to you!"
+    users:
+      profile:
+        update:
+          success: "User updated successfully"
+          error: "Error updating user"
+        create:
+          success: "User created successfully"
+          error: "Error creating user"
+      password:
+        update:
+          success: "Password updated successfully"
+          error: "This is not your password"
+    session:
+      create:
+        success: "Logged in successfully"
+        error: "Invalid email or password"
+      destroy:
+        success: "Logged out successfully"
+    posts:
+      create:
+        success: "Post published successfully!"
+        error: "Error publishing post"
+      update:
+        success: "Post updated successfully!"
+        error: "Error updating post"
+      destroy:
+        success: "Post deleted successfully!"
+        error: "Error deleting post"
+    comments:
+      create:
+        success: "Comment published successfully!"
+        error: "Error publishing comment"
+    passwordreset:
+      create:
+        success: "A password recovery message has been sent to your email"
+        error: "Please provide an email!"
+      update:
+        success: "Your password has been successfully updated"
+        error: "Passwords do not match, please try again!"
+      token: "Token expired, please try again!"

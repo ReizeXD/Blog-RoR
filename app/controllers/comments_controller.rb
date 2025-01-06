@@ -9,9 +9,9 @@ class CommentsController < ApplicationController
         end
 
         if @comment.save
-            flash[:success]="Comentário publicado com sucesso!"
+            flash[:success]=t('flash.comments.create.success')
         else
-            flash[:danger]="Erro ao publicar comentário"
+            flash[:danger]=t('flash.comments.create.error')
         end
         redirect_to post_path(@post)
     end
