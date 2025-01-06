@@ -10,7 +10,7 @@ class UsersController < ApplicationController
         @user= User.new(user_params)
         if @user.save
             flash[:success]="Usuario cadastrado com sucesso"
-            redirect_to root_url
+            redirect_to entrar_path
         else
             render :new
         end
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
             flash[:danger]="Essa não é sua senha"
             redirect_to edit_user_path(current_user)
         else
-            if current_user.update(user_params)
+            if @user.update(user_params)
                 flash[:success]="Usuario editado com sucesso"
                 redirect_to root_url
             else

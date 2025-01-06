@@ -20,12 +20,12 @@
                 <% if comment.anon? %>
                   Usuário: Anônimo
                 <% else %>
-                  Usuário: <%= comment.user.name %> <!-- Ajuste conforme seu modelo de usuário -->
+                  Usuário: <%= comment.user.name %> 
                 <% end %>
               </strong>
             </p>
             <hr>
-            <p><%= simple_format(comment.content)%></p> <!-- Ajuste aqui -->
+            <p><%= simple_format(comment.content)%></p>
             <hr>
           </div>
         </div>

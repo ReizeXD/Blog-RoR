@@ -13,8 +13,7 @@ class SessionsController < ApplicationController
             redirect_to root_path
         else
             flash[:danger]="Email ou senha invalidos"
-
-            redirect_to entrar_path
+            render :new
         end
     end
 
