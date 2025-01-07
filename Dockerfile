@@ -60,3 +60,28 @@ ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
 CMD ["./bin/rails", "server"]
+
+
+
+# Dockerfile
+FROM ruby:2.7
+
+# Configuração do ambiente de trabalho
+WORKDIR /app
+
+# Adiciona e instala dependências
+COPY Gemfile Gemfile.lock ./
+RUN bundle install
+
+# Adiciona o restante do código da aplicação
+COPY . ./
+
+# Ajusta permissões para o arquivo ./bin/rails
+RUN chmod +x ./bin/rails
+
+# Precompila os assets
+RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
+
+# Comando para iniciar o servidor (ajuste conforme necessário)
+CMD ["./bin/rails", "server", "-b", "0.0.0.0"]
+
