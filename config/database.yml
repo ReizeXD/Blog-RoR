@@ -8,7 +8,7 @@ development:
   database: <%= ENV['DB_NAME_DEVELOP'] %>
   username: <%= ENV['DB_USER'] %>
   password: <%= ENV['DB_PASSWORD'] %>
-  host: <%= ENV['DB_HOST'] %>
+  host: <%= ENV['DB_HOST'] %> 
   port: 5433
 
 test:
