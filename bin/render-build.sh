@@ -1,7 +1,12 @@
-#!/usr/bin/env bash# exit on error
+#!/usr/bin/env bash
+set -e
 
-set -o errexit
-
+# Instalar dependências
 bundle install
-bundle exec rails assets:precompile
-bundle exec rails assets:clean
+
+# Pré-compilar assets
+bundle exec rake assets:clean
+bundle exec rake assets:precompile
+
+# Aplicar migrações
+./bin/rails db:migrate
