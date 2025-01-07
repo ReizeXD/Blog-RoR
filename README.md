@@ -70,6 +70,7 @@ Este projeto foi desenvolvido com a finalidade de servir como teste para um proc
     ● fazer comentários identificados através do login;
     ● editar o seu cadastro de usuário;
     ● alterar a senha do usuário logado.
+    ● implemente internacionalização;
 
 ---
 
