@@ -1,5 +1,7 @@
 # Blog_RoR
 
+**Link da aplicação: https://blog-ror-z3h6.onrender.com/**
+
 ## Visão Geral
 
 O projeto **Blog_RoR** é uma aplicação para a criação de blogs, no qual possui as funções de postar blogs e comentas em blogs. Construído em Ruby on Rails, Utiliza HTTP para interação com os dados, permitindo que diferentes tipos de usuários participem do ciclo de vida de um blog, desde sua criação até a coleta de comentários.
