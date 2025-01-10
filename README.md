@@ -161,6 +161,6 @@ rails s
 
 6. Acesse a aplicação no navegador:
 
-  URL: http://localhost:3000/graphiql
+  URL: http://localhost:3000/
 
-Agora está pronto para utilizar a aplicação, inserindo as queries e mutations.
+Agora está pronto para utilizar a aplicação.
